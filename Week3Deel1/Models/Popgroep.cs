@@ -10,6 +10,5 @@ namespace Week3Deel1.Models
         public string Naam { get; set; }
 
         public List<Artiest> Artiesten { get; set; }
-
     }
 }

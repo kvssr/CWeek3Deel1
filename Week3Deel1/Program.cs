@@ -12,41 +12,41 @@ namespace Week3Deel1
             Console.WriteLine("Hello World!");
             PopgroepContext pc = new PopgroepContext();
 
-            ////Instrumenten aanmaken
-            //Instrument i1 = new Instrument { Naam = "Gitaar" };
-            //Instrument i2 = new Instrument { Naam = "Bass" };
-            //Instrument i3 = new Instrument { Naam = "Drum" };
+            //Instrumenten aanmaken
+            Instrument i1 = new Instrument { Naam = "Gitaar" };
+            Instrument i2 = new Instrument { Naam = "Bass" };
+            Instrument i3 = new Instrument { Naam = "Drum" };
 
-            ////Groepen aanmaken
-            //Popgroep p1 = new Popgroep { Naam = "Groep1" };
-            //Popgroep p2 = new Popgroep { Naam = "Groep2" };
-            //Popgroep p3 = new Popgroep { Naam = "Groep3" };
+            //Groepen aanmaken
+            Popgroep p1 = new Popgroep { Naam = "Groep1" };
+            Popgroep p2 = new Popgroep { Naam = "Groep2" };
+            Popgroep p3 = new Popgroep { Naam = "Groep3" };
 
-            ////Artiesten aanmaken en de groep en instrument toevoegen
-            //Artiest a1 = new Artiest { Naam = "Arie", Popgroep = p1, Instrument = i1 };
-            //Artiest a2 = new Artiest { Naam = "Bert", Popgroep = p1, Instrument = i2 };
-            //Artiest a3 = new Artiest { Naam = "Cornelis", Popgroep = p1, Instrument = i3 };
-            //Artiest a4 = new Artiest { Naam = "Dirk", Popgroep = p2, Instrument = i1 };
-            //Artiest a5 = new Artiest { Naam = "Eva", Popgroep = p2, Instrument = i2 };
-            //Artiest a6 = new Artiest { Naam = "Ferdi", Popgroep = p2, Instrument = i3 };
-            //Artiest a7 = new Artiest { Naam = "Gerda", Popgroep = p3, Instrument = i1 };
-            //Artiest a8 = new Artiest { Naam = "Henk", Popgroep = p3, Instrument = i3 };
+            //Artiesten aanmaken en de groep en instrument toevoegen
+            Artiest a1 = new Artiest { Naam = "Arie", Popgroep = p1, Instrument = i1 };
+            Artiest a2 = new Artiest { Naam = "Bert", Popgroep = p1, Instrument = i2 };
+            Artiest a3 = new Artiest { Naam = "Cornelis", Popgroep = p1, Instrument = i3 };
+            Artiest a4 = new Artiest { Naam = "Dirk", Popgroep = p2, Instrument = i1 };
+            Artiest a5 = new Artiest { Naam = "Eva", Popgroep = p2, Instrument = i2 };
+            Artiest a6 = new Artiest { Naam = "Ferdi", Popgroep = p2, Instrument = i3 };
+            Artiest a7 = new Artiest { Naam = "Gerda", Popgroep = p3, Instrument = i1 };
+            Artiest a8 = new Artiest { Naam = "Henk", Popgroep = p3, Instrument = i3 };
 
-            ////Alles aan de dcContext toevoegen
-            //pc.Artiesten.Add(a1);
-            //pc.Artiesten.Add(a2);
-            //pc.Artiesten.Add(a3);
-            //pc.Artiesten.Add(a4);
-            //pc.Artiesten.Add(a5);
-            //pc.Artiesten.Add(a6);
-            //pc.Artiesten.Add(a7);
-            //pc.Artiesten.Add(a8);
+            //Alles aan de dcContext toevoegen
+            pc.Artiesten.Add(a1);
+            pc.Artiesten.Add(a2);
+            pc.Artiesten.Add(a3);
+            pc.Artiesten.Add(a4);
+            pc.Artiesten.Add(a5);
+            pc.Artiesten.Add(a6);
+            pc.Artiesten.Add(a7);
+            pc.Artiesten.Add(a8);
 
-            ////Opslaan naar de database
-            //pc.SaveChanges();
+            //Opslaan naar de database
+            pc.SaveChanges();
 
             //Haalt alle popgroepen en artiesten in een groep op. Eager.
-            foreach(Popgroep p in pc.Popgroepen.Include(p => p.Artiesten))
+            foreach (Popgroep p in pc.Popgroepen.Include(p => p.Artiesten))
             {
                 Console.WriteLine(p.Naam);
                 foreach(Artiest a in p.Artiesten)
